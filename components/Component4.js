@@ -1,18 +1,25 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, AppRegistry } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
-const users = [
-  { name: "John Doe" },
-  { name: "Cindy Le" },
-  { name: "Steve Smith" },
-  { name: "Janet Williams" }
-];
-
-export default class Component4 extends Component {
+export default class FlatListBasics extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Component4</Text>
+        <FlatList
+          data={[
+            { key: "Devin" },
+            { key: "Dan" },
+            { key: "Dominic" },
+            { key: "Jackson" },
+            { key: "James" },
+            { key: "Joel" },
+            { key: "John" },
+            { key: "Jillian" },
+            { key: "Jimmy" },
+            { key: "Julie" }
+          ]}
+          renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+        />
       </View>
     );
   }
@@ -21,10 +28,11 @@ export default class Component4 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    paddingTop: 22
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44
   }
 });
-
-AppRegistry.registerComponent("Component4", () => Component4);

@@ -24,14 +24,18 @@ export default class Component2 extends Component {
           <Text style={styles.myText}>Hello Cindy</Text>
         </View>
         <View style={styles.container}>
-          <TouchableHighlight onPress={this.onPress} underlayColor="blue">
-            <View style={styles.v1}>
+          <TouchableHighlight
+            style={styles.v1}
+            onPress={this.onPress}
+            underlayColor="blue"
+          >
+            <View>
               <Text>View 1</Text>
             </View>
           </TouchableHighlight>
 
-          <TouchableOpacity onPress={this.onPress2}>
-            <View style={styles.v2}>
+          <TouchableOpacity style={styles.v2} onPress={this.onPress2}>
+            <View>
               <Text>View 2</Text>
             </View>
           </TouchableOpacity>
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
   },
   v3: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "blue",
     padding: 10
   }
 });
